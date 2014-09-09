@@ -74,7 +74,9 @@
 
 								<div id="contact_form">
 								<h3><strong>Send Us a Message</strong></h3>
-								<form id="contact_wcf" method="POST" action="contact_process.php">
+								
+								
+								<form id="contact_wcf" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 									<div class="style4 special small">
 										
 											<!-- name -->
@@ -94,24 +96,60 @@
 												<li><input type="submit" value="Submit"></li>
 											</ul> -->
 											<footer class="major center_align">
-												<ul class="buttons">
-													<li><a href="#" onclick="document.forms['contact_wcf'].submit();"class="button">SEND MESSAGE</a></li>
-												</ul>
+												<!-- <ul class="buttons">
+													<li><a href="#" onclick="document.getElementById['contact_wcf'].submit();"class="button">SEND MESSAGE</a></li>
+												</ul> -->
+												<input type="submit">
+												
 											</footer>
-										
 									</div>
 								</form>
-								</div>
-								
-
 								</section>
+							</div> <!-- /6u -->
 
-							</div>
+							<?php
+
+if(isset($_POST)) {
+	
+	$to = "jocelyn.palacki@gmail.com";
+	$subject = $_POST['subject'];
+	$name_field = $_POST['name'];
+	$email_field = $_POST['email'];
+	$message = $_POST['message'];
+
+	$headers = 'From: WCFdesign.com'."\r\n" ;
+    $headers .='Reply-To: '. $to . "\r\n" ;
+    $headers .='X-Mailer: PHP/' . phpversion();
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
+	 
+	$body = "From:".$name_field."\n E-Mail:".$email_field."\n Message:\n".$message;
+ 
+	echo "Data has been submitted to $to!";
+	
+	//Submit form
+	mail($to, $subject, $body, $headers);
+
+
+}else {
+ echo "There was an error!";
+}
+
+
+?>
+						
+			
+							
+
+
+							
 							<div class="6u">
+
 								
 								<section>
 								<img style="position:fixed;" src="images/coo_chair_sm.jpg">
 								</section>
+
 
 							</div>
 						</div>
