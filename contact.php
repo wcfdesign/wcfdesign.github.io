@@ -76,7 +76,7 @@
 								<h3><strong>Send Us a Message</strong></h3>
 								
 								
-								<form id="contact_wcf" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+								<form id="contact_wcf" action="<?=$_SERVER['PHP_SELF'] ?>" method="POST">
 									<div class="style4 special small">
 										
 											<!-- name -->
@@ -107,7 +107,7 @@
 								</section>
 							</div> <!-- /6u -->
 
-							<?php
+<?php
 
 if(isset($_POST)) {
 	
@@ -125,12 +125,12 @@ if(isset($_POST)) {
 	 
 	$body = "From:".$name_field."\n E-Mail:".$email_field."\n Message:\n".$message;
  
-	echo "Data has been submitted to $to!";
+	
 	
 	//Submit form
 	mail($to, $subject, $body, $headers);
 
-
+	echo "Data has been submitted to $to!";
 }else {
  echo "There was an error!";
 }
