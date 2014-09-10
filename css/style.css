@@ -236,6 +236,11 @@
 #man_anc ul li a{
 	color: #157BBA;
 }
+#reps a{
+	color: #157BBA;
+	font-size: .8em;
+	margin-right: 15px;
+}
 
 /* Form */
 
