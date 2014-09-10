@@ -66,77 +66,46 @@
 							<div class="6u">
 							
 								<section id="contact">
-								<h3><strong>Contact Us</strong></h3>
+									<h3><strong>Contact Us</strong></h3>
 
-								<h4><img src="images/contact_phone.png"><a href="tel:+17248387748">724-838-7748</a></h4>
-								<h4><img src="images/contact_fax.png">724-552-0388</h4>
-								<h4><img src="images/contact_location.png">1572 Woodward Dr Ext, Greensburg, PA 15601</h4>
+									<h4><img src="images/contact_phone.png"><a href="tel:+17248387748">724-838-7748</a></h4>
+									<h4><img src="images/contact_fax.png">724-552-0388</h4>
+									<h4><img src="images/contact_location.png">1572 Woodward Dr Ext, Greensburg, PA 15601</h4>
 
-								<div id="contact_form">
-								<h3><strong>Send Us a Message</strong></h3>
-								
-								
-								<form id="contact_wcf" action="<?=$_SERVER['PHP_SELF'] ?>" method="POST">
-									<div class="style4 special small">
+									<div id="contact_form">
+										<h3><strong>Connect With Us</strong></h3>
+										<h4><img src="images/contact_in.png" id="contact_social"><img src="images/contact_in.png" id="contact_social"></h4>
+
+										<h3><strong>Send Us a Message</strong></h3>
 										
-											<!-- name -->
-											<input type="text" name="name" placeholder="Name" />
-
-											<!-- email -->
-											<input type="text" name="email" placeholder="Email" />
-
-
-											<input type="text" name="subject" placeholder="Subject" />
-
-
-											<textarea name="message" placeholder="Message" rows="7"></textarea>
-										
-									
-											<!-- <ul class="buttons">
-												<li><input type="submit" value="Submit"></li>
-											</ul> -->
-											<footer class="major center_align">
-												<!-- <ul class="buttons">
-													<li><a href="#" onclick="document.getElementById['contact_wcf'].submit();"class="button">SEND MESSAGE</a></li>
-												</ul> -->
-												<input type="submit">
+										<!-- <form id="contact_wcf" action="./" method="POST">
+											<div class="style4 special small">
 												
-											</footer>
-									</div>
-								</form>
+													
+													<input type="text" name="name" placeholder="Name" />
+
+													
+													<input type="text" name="email" placeholder="Email" />
+
+
+													<input type="text" name="subject" placeholder="Subject" />
+
+
+													<textarea name="message" placeholder="Message" rows="7"></textarea>
+												
+											</div>
+										</form> -->
+
+										<footer class="major center_align">
+											<ul class="buttons">
+												<li><a href="mailto:jocelyn.palacki@gmail.com" class="button">SEND US AN EMAIL</a></li>
+											</ul>		
+										</footer>
+									</div> <!-- /contact form -->
 								</section>
 							</div> <!-- /6u -->
 
-<?php
 
-if(isset($_POST)) {
-	
-	$to = "jocelyn.palacki@gmail.com";
-	$subject = $_POST['subject'];
-	$name_field = $_POST['name'];
-	$email_field = $_POST['email'];
-	$message = $_POST['message'];
-
-	$headers = 'From: WCFdesign.com'."\r\n" ;
-    $headers .='Reply-To: '. $to . "\r\n" ;
-    $headers .='X-Mailer: PHP/' . phpversion();
-    $headers .= "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-	 
-	$body = "From:".$name_field."\n E-Mail:".$email_field."\n Message:\n".$message;
- 
-	
-	
-	//Submit form
-	mail($to, $subject, $body, $headers);
-
-	echo "Data has been submitted to $to!";
-}else {
- echo "There was an error!";
-}
-
-
-?>
 						
 			
 							
