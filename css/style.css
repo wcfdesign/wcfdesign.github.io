@@ -221,6 +221,15 @@
 #contact_social{
 	padding-top: -20px;
 }
+#mailbtn{
+	margin-bottom: 50px;
+}
+#contact_soc{
+	margin-bottom: 180px;
+}
+#footer a{
+	color: #7c8081;
+}
 
 /* Form */
 
